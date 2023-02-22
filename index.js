@@ -16,7 +16,7 @@ const undoRedo = (state) => {
     }
   };
 
-  const undoReducer = (action) => {
+  const setUndoState = (action) => {
     const { actionType, key } = action;
     switch (actionType) {
       case ADD_VALUE: {
@@ -37,7 +37,7 @@ const undoRedo = (state) => {
     return state;
   };
 
-  const redoReducer = (action) => {
+  const setRedoState = (action) => {
     const { actionType, key } = action;
     switch (actionType) {
       case ADD_VALUE: {
@@ -95,14 +95,14 @@ const undoRedo = (state) => {
       if (!actions.length) {
         throw new Error(UNDO_MESSAGE);
       }
-      return undoReducer(actions.pop());
+      return setUndoState(actions.pop());
     },
 
     redo() {
       if (!undoStack.length) {
         throw new Error(REDO_MESSAGE);
       }
-      return redoReducer(undoStack.pop());
+      return setRedoState(undoStack.pop());
     },
   };
 };
