@@ -1,4 +1,4 @@
-It is my solution for Undo/Redo Codewars Kata
+## My solution for Undo/Redo Codewars Kata
 
 ![image](https://user-images.githubusercontent.com/90127354/220557344-3d7a6400-622a-4557-a3c2-c73ddb427464.png)
 
